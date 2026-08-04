@@ -3,10 +3,15 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.blueGrey,
         appBar: AppBar(
-          title: Text("Iam rich"),
+          title: Text(
+            "Iam rich",
+            style: TextStyle(color: Colors.white),
+            textAlign: TextAlign.center,
+          ),
           backgroundColor: Colors.blueGrey[900],
         ),
         body: Center(
