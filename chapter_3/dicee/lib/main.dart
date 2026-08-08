@@ -17,7 +17,20 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: Text("Dicee", style: TextStyle())),
+        backgroundColor: Colors.redAccent,
+        appBar: AppBar(
+          title: Text(
+            "Dicee",
+            style: TextStyle(
+              fontFamily: "Source Sans 3",
+              fontSize: 25,
+              color: Colors.white,
+            ),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.redAccent,
+        ),
+        body: Row(children: [Image.asset("")]),
       ),
     );
   }
