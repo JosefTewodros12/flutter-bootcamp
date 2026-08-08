@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +13,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int leftButton = 1;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,7 +33,23 @@ class _MyAppState extends State<MyApp> {
           centerTitle: true,
           backgroundColor: Colors.redAccent,
         ),
-        body: Row(children: [Image.asset("")]),
+        body: Center(
+          child: Row(
+            children: [
+              Expanded(
+                child: TextButton(
+                  onPressed: () {
+                    setState(() {
+                      leftButton = Random().nextInt(5) + 1;
+                    });
+                  },
+                  child: Image.asset("assets/images/dice${leftButton}.png"),
+                ),
+              ),
+              Expanded(child: Image.asset("assets/images/dice1.png")),
+            ],
+          ),
+        ),
       ),
     );
   }
