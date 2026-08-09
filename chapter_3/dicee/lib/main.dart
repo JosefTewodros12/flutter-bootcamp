@@ -15,6 +15,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int leftButton = 1;
   int rightButton = 1;
+
   void buttons() {
     setState(() {
       rightButton = Random().nextInt(5) + 1;
@@ -29,17 +30,19 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         backgroundColor: Colors.redAccent,
         appBar: AppBar(
-          leading: Image.asset("assets/images/dice6.png"),
+          leading: Image.asset("assets/images/logo.png"),
+          elevation: 3,
           title: Text(
             "Dicee",
             style: TextStyle(
               fontFamily: "Source Sans 3",
               fontSize: 26,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1.2,
               color: Colors.white,
             ),
           ),
-          centerTitle: true,
-          backgroundColor: Colors.redAccent,
+          backgroundColor: Colors.red,
         ),
         body: Center(
           child: Row(
