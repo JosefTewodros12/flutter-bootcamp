@@ -18,8 +18,8 @@ class _MyAppState extends State<MyApp> {
 
   void buttons() {
     setState(() {
-      rightButton = Random().nextInt(5) + 1;
-      leftButton = Random().nextInt(5) + 1;
+      rightButton = Random().nextInt(6) + 1;
+      leftButton = Random().nextInt(6) + 1;
     });
   }
 
