@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
   int leftButton = 1;
   int rightButton = 1;
 
-  void buttons() {
+  void changeDiceFace() {
     setState(() {
       rightButton = Random().nextInt(6) + 1;
       leftButton = Random().nextInt(6) + 1;
@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
               Expanded(
                 child: TextButton(
                   onPressed: () {
-                    buttons();
+                    changeDiceFace();
                   },
                   child: Image.asset("assets/images/dice$leftButton.png"),
                 ),
@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
               Expanded(
                 child: TextButton(
                   onPressed: () {
-                    buttons();
+                    changeDiceFace();
                   },
                   child: Image.asset("assets/images/dice$rightButton.png"),
                 ),
