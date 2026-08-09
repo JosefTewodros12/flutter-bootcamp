@@ -14,6 +14,13 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int leftButton = 1;
+  int rightButton = 1;
+  void buttons() {
+    setState(() {
+      rightButton = Random().nextInt(5) + 1;
+      leftButton = Random().nextInt(5) + 1;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +29,12 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         backgroundColor: Colors.redAccent,
         appBar: AppBar(
+          leading: Image.asset("assets/images/dice6.png"),
           title: Text(
             "Dicee",
             style: TextStyle(
               fontFamily: "Source Sans 3",
-              fontSize: 25,
+              fontSize: 26,
               color: Colors.white,
             ),
           ),
@@ -39,14 +47,19 @@ class _MyAppState extends State<MyApp> {
               Expanded(
                 child: TextButton(
                   onPressed: () {
-                    setState(() {
-                      leftButton = Random().nextInt(5) + 1;
-                    });
+                    buttons();
                   },
-                  child: Image.asset("assets/images/dice${leftButton}.png"),
+                  child: Image.asset("assets/images/dice$leftButton.png"),
                 ),
               ),
-              Expanded(child: Image.asset("assets/images/dice1.png")),
+              Expanded(
+                child: TextButton(
+                  onPressed: () {
+                    buttons();
+                  },
+                  child: Image.asset("assets/images/dice$rightButton.png"),
+                ),
+              ),
             ],
           ),
         ),
