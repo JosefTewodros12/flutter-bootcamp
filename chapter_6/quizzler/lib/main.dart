@@ -28,6 +28,25 @@ class QuizPage extends StatefulWidget {
 }
 
 class QuizPageState extends State<QuizPage> {
+  int questionCounter = 0;
+  List<String> questions = [
+    'You can lead a cow down stairs but not up stairs.',
+    'Approximately one quarter of human bones are in the feet.',
+    'A slug\'s blood is green.',
+  ];
+  List<bool> answers = [false, true, true];
+  /*question1: 'You can lead a cow down stairs but not up stairs.', false,
+question2: 'Approximately one quarter of human bones are in the feet.', true,
+question3: 'A slug\'s blood is green.', true,
+ */
+
+  List<Icon> scoreKeeper = [
+    Icon(Icons.check, color: Colors.green, size: 30),
+    Icon(Icons.close, color: Colors.red, size: 30),
+    Icon(Icons.check, color: Colors.green, size: 30),
+    Icon(Icons.close, color: Colors.red, size: 30),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -40,7 +59,7 @@ class QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                'This is where the question text will go.',
+                questions[questionCounter],
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 25.0, color: Colors.white),
               ),
@@ -60,6 +79,13 @@ class QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
+                setState(() {
+                  questionCounter += 1;
+                  // bool correctAnswer = answers[questionCounter];
+                  // if (correctAnswer == true) {
+                  //   print("Your are correct");
+                  // }
+                });
               },
             ),
           ),
@@ -77,17 +103,19 @@ class QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
+                setState(() {
+                  questionCounter += 1;
+                  // bool correctAnswer = answers[questionCounter];
+                  // if (correctAnswer == false) {
+                  //   print("you are correct");
+                  // }
+                });
               },
             ),
           ),
         ),
         //todo: Add a Row here as your score keeper
-        Row(
-          children: [
-            Icon(Icons.check, color: Colors.green, size: 30),
-            Icon(Icons.close, color: Colors.red, size: 30),
-          ],
-        ),
+        Row(children: scoreKeeper),
       ],
     );
   }
