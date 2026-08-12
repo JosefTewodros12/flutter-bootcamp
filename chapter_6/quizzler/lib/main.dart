@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'quiz_brain.dart';
 
 QuizBrain quizbrain = QuizBrain();
@@ -34,12 +35,13 @@ class QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper = [];
   void answerChecker(bool answer) {
     bool correctAnswer = quizbrain.getAnswer();
-    if (correctAnswer == answer) {
-      scoreKeeper.add(Icon(Icons.check, color: Colors.green, size: 20));
-    } else {
-      scoreKeeper.add(Icon(Icons.close, color: Colors.red, size: 20));
-    }
+
     setState(() {
+      if (correctAnswer == answer) {
+        scoreKeeper.add(Icon(Icons.check, color: Colors.green, size: 20));
+      } else {
+        scoreKeeper.add(Icon(Icons.close, color: Colors.red, size: 20));
+      }
       quizbrain.nextQuestion();
     });
   }
