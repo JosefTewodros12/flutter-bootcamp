@@ -37,11 +37,20 @@ class QuizPageState extends State<QuizPage> {
     bool correctAnswer = quizbrain.getAnswer();
 
     setState(() {
-      if (correctAnswer == answer) {
-        scoreKeeper.add(Icon(Icons.check, color: Colors.green, size: 20));
+      if (quizbrain.isFinished()) {
+        Alert(
+          context: context,
+          title: "The end",
+          desc: "You've reached the end of quiz",
+        ).show();
+        quizbrain.reset();
+        scoreKeeper.clear();
+      } else if (correctAnswer == answer) {
+        scoreKeeper.add(Icon(Icons.check, color: Colors.green));
       } else {
-        scoreKeeper.add(Icon(Icons.close, color: Colors.red, size: 20));
+        scoreKeeper.add(Icon(Icons.close, color: Colors.red));
       }
+
       quizbrain.nextQuestion();
     });
   }
@@ -80,7 +89,6 @@ class QuizPageState extends State<QuizPage> {
               onPressed: () {
                 //The user picked true.
                 answerChecker(true);
-                quizbrain.nextQuestion();
               },
             ),
           ),
@@ -99,7 +107,6 @@ class QuizPageState extends State<QuizPage> {
               onPressed: () {
                 //The user picked false.
                 answerChecker(false);
-                quizbrain.nextQuestion();
               },
             ),
           ),

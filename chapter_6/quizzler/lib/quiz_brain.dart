@@ -34,18 +34,34 @@ class QuizBrain {
       true,
     ),
   ];
-  int questionCounter = 0;
+  int _questionCounter = 0;
   void nextQuestion() {
-    if (questionCounter < _questionBank.length - 1) {
-      questionCounter++;
+    if (!isFinished()) {
+      _questionCounter++;
+    } else {
+      reset();
     }
   }
 
+  void reset() {
+    _questionCounter = 0;
+  }
+
+  bool isFinished() {
+    return _questionCounter >= _questionBank.length;
+  }
+
   String getQuestion() {
-    return _questionBank[questionCounter].question;
+    if (_questionCounter < _questionBank.length) {
+      return _questionBank[_questionCounter].question;
+    }
+    return 'Quiz completed!';
   }
 
   bool getAnswer() {
-    return _questionBank[questionCounter].answer;
+    if (_questionCounter < _questionBank.length) {
+      return _questionBank[_questionCounter].answer;
+    }
+    return false;
   }
 }
