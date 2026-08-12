@@ -46,7 +46,8 @@ class QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                quizbrain.questionBank[questionCounter].question,
+                // quizbrain.questionBank[questionCounter].question,
+                quizbrain.getQuestion(questionCounter),
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 25.0, color: Colors.white),
               ),
@@ -68,6 +69,13 @@ class QuizPageState extends State<QuizPage> {
                 //The user picked true.
                 setState(() {
                   questionCounter += 1;
+                  bool correctAnswer = quizbrain.getAnswer(questionCounter);
+                  // quizbrain.questionBank[questionCounter].answer;
+                  if (correctAnswer == true) {
+                    print("the answer is right");
+                  } else {
+                    print("the answer is wrong");
+                  }
                   scoreKeeper.add(
                     Icon(Icons.check, color: Colors.green, size: 30),
                   );
@@ -91,6 +99,14 @@ class QuizPageState extends State<QuizPage> {
                 //The user picked false.
                 setState(() {
                   questionCounter += 1;
+                  //quizbrain.questionBank[questionCounter].answer;
+                  bool correctAnswer = quizbrain.getAnswer(questionCounter);
+
+                  if (correctAnswer == false) {
+                    print("the answer is right");
+                  } else {
+                    print("the answer is wrong");
+                  }
                   scoreKeeper.add(
                     Icon(Icons.close, color: Colors.red, size: 30),
                   );
