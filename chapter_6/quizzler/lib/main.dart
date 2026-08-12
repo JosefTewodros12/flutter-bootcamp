@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'question.dart';
 
 void main() => runApp(Quizzler());
 
@@ -29,17 +30,16 @@ class QuizPage extends StatefulWidget {
 
 class QuizPageState extends State<QuizPage> {
   int questionCounter = 0;
-  List<String> questions = [
-    'You can lead a cow down stairs but not up stairs.',
-    'Approximately one quarter of human bones are in the feet.',
-    'A slug\'s blood is green.',
-  ];
-  List<bool> answers = [false, true, true];
-  /*question1: 'You can lead a cow down stairs but not up stairs.', false,
-question2: 'Approximately one quarter of human bones are in the feet.', true,
-question3: 'A slug\'s blood is green.', true,
- */
-
+  //   List<String> questions = [
+  //     'You can lead a cow down stairs but not up stairs.',
+  //     'Approximately one quarter of human bones are in the feet.',
+  //     'A slug\'s blood is green.',
+  //   ];
+  //   List<bool> answers = [false, true, true];
+  //   /*question1: 'You can lead a cow down stairs but not up stairs.', false,
+  // question2: 'Approximately one quarter of human bones are in the feet.', true,
+  // question3: 'A slug\'s blood is green.', true,
+  //  */
   List<Icon> scoreKeeper = [
     Icon(Icons.check, color: Colors.green, size: 30),
     Icon(Icons.close, color: Colors.red, size: 30),
@@ -59,7 +59,7 @@ question3: 'A slug\'s blood is green.', true,
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questions[questionCounter],
+                questions[questionCounter].question,
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 25.0, color: Colors.white),
               ),
