@@ -34,12 +34,18 @@ class QuizBrain {
       true,
     ),
   ];
-
-  String getQuestion(int questionNumber) {
-    return _questionBank[questionNumber].question;
+  int questionCounter = 0;
+  void nextQuestion() {
+    if (questionCounter < _questionBank.length - 1) {
+      questionCounter++;
+    }
   }
 
-  bool getAnswer(int answerNumber) {
-    return _questionBank[answerNumber].answer;
+  String getQuestion() {
+    return _questionBank[questionCounter].question;
+  }
+
+  bool getAnswer() {
+    return _questionBank[questionCounter].answer;
   }
 }
