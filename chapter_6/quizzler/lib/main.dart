@@ -82,6 +82,12 @@ class QuizPageState extends State<QuizPage> {
           ),
         ),
         //todo: Add a Row here as your score keeper
+        Row(
+          children: [
+            Icon(Icons.check, color: Colors.green, size: 30),
+            Icon(Icons.close, color: Colors.red, size: 30),
+          ],
+        ),
       ],
     );
   }
