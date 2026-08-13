@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:destini/story_brain.dart';
 
 //todo: Step 15 - Run the app and see if you can see the screen update with the first story. Delete this todo if it looks as you expected.
 
@@ -13,6 +14,7 @@ class Destini extends StatelessWidget {
 }
 
 //todo: Step 9 - Create a new storyBrain object from the StoryBrain class.
+StoryBrain s1 = StoryBrain();
 
 class StoryPage extends StatefulWidget {
   const StoryPage({super.key});
