@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
-import 'components/reusablecard.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'components/reusable_card.dart';
+import 'components/reusable_button.dart';
+import 'components/icon_content.dart';
+
 /*
   0xFF1D1E33
   0xFF0A0E21 
 */
+final btnColor = Color(0xFFEB1555);
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
@@ -26,8 +31,24 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: [
-                Expanded(child: ReusableCard(colour: Color(0xFF1D1E33))),
-                Expanded(child: ReusableCard(colour: Color(0xFF1D1E33))),
+                Expanded(
+                  child: ReusableCard(
+                    colour: Color(0xFF1D1E33),
+                    cardChild: IconContent(
+                      genderText: 'Male',
+                      genderIcon: FontAwesomeIcons.mars,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    colour: Color(0xFF1D1E33),
+                    cardChild: IconContent(
+                      genderText: 'Female',
+                      genderIcon: FontAwesomeIcons.venus,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -40,7 +61,7 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          SizedBox(height: 10),
+          Reusablebutton(btnColour: btnColor, btnText: 'Calculate'),
         ],
       ),
     );
