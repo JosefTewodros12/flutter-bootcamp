@@ -3,14 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'components/reusable_card.dart';
 import 'components/reusable_button.dart';
 import 'components/icon_content.dart';
-
-/*
-  0xFF1D1E33
-  0xFF0A0E21 
-*/
-const btnColor = Color(0xFFEB1555);
-const activeColour = Color(0xFF1D1E33);
-const inactiveColour = Color(0xFF111328);
+import 'constants/constant.dart';
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
@@ -20,9 +13,6 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleColour = inactiveColour;
-  Color femaleColour = inactiveColour;
-
   //1 for male ... 2 for female
   void updateColour(int genderNum) {
     if (genderNum == 1) {
@@ -43,10 +33,10 @@ class _InputPageState extends State<InputPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF0A0E21),
+      backgroundColor: backgroundColour,
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
-        backgroundColor: Color(0xFF0A0E21),
+        backgroundColor: backgroundColour,
       ),
       body: Column(
         children: [
