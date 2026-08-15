@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'components/reusablecard.dart';
 /*
   0xFF1D1E33
   0xFF0A0E21 
@@ -21,12 +21,27 @@ class _InputPageState extends State<InputPage> {
         title: Text('BMI CALCULATOR'),
         backgroundColor: Color(0xFF0A0E21),
       ),
-      body: Container(
-        margin: EdgeInsets.all(30),
-        decoration: BoxDecoration(
-          color: Color(0xFF1D1E33),
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-        ),
+      body: Column(
+        children: [
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(child: ReusableCard(colour: Color(0xFF1D1E33))),
+                Expanded(child: ReusableCard(colour: Color(0xFF1D1E33))),
+              ],
+            ),
+          ),
+          Expanded(child: ReusableCard(colour: Color(0xFF1D1E33))),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(child: ReusableCard(colour: Color(0xFF1D1E33))),
+                Expanded(child: ReusableCard(colour: Color(0xFF1D1E33))),
+              ],
+            ),
+          ),
+          SizedBox(height: 10),
+        ],
       ),
     );
   }
