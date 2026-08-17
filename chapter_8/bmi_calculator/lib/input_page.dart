@@ -16,6 +16,8 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender? selectedGender;
+  int height = 180;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +66,49 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Expanded(child: ReusableCard(colour: Color(0xFF1D1E33))),
+          Expanded(
+            child: ReusableCard(
+              colour: Color(0xFF1D1E33),
+              cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("HEIGHT", style: textstyle),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(height.toString(), style: numtextstyle),
+                      Text("cm", style: textstyle),
+                    ],
+                  ),
+                  SliderTheme(
+                    data: SliderTheme.of(context).copyWith(
+                      activeTrackColor: Colors.white,
+                      overlayColor: Color(0x29EB1555),
+                      thumbColor: Color(0xFFEB1555),
+                      thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15),
+                      overlayShape: RoundSliderThumbShape(
+                        enabledThumbRadius: 20,
+                      ),
+                      trackHeight: 2,
+                    ),
+                    child: Slider(
+                      value: height.toDouble(),
+                      min: 120,
+                      max: 220,
+                      inactiveColor: Color(0xFF8D8E98),
+                      onChanged: (double newheight) {
+                        setState(() {
+                          height = newheight.round();
+                        });
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
           Expanded(
             child: Row(
               children: [

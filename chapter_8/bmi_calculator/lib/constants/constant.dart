@@ -7,3 +7,11 @@ const btnColor = Color(0xFFEB1555);
 
 Color maleColour = inactiveColour;
 Color femaleColour = inactiveColour;
+
+const textstyle = TextStyle(color: Color(0xFF8D8E98), fontSize: 23);
+
+const numtextstyle = TextStyle(
+  color: Colors.white,
+  fontSize: 60,
+  fontWeight: FontWeight.w900,
+);
