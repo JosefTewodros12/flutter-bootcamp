@@ -4,6 +4,7 @@ import 'components/reusable_card.dart';
 import 'components/reusable_button.dart';
 import 'components/icon_content.dart';
 import 'constants/constant.dart';
+import 'components/round_button.dart';
 
 enum Gender { male, female }
 
@@ -17,6 +18,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender? selectedGender;
   int height = 180;
+  int weight = 60;
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +114,40 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: [
-                Expanded(child: ReusableCard(colour: Color(0xFF1D1E33))),
+                Expanded(
+                  child: ReusableCard(
+                    colour: Color(0xFF1D1E33),
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('WEIGHT', style: textstyle),
+                        Text(weight.toString(), style: numtextstyle),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundButton(
+                              icon: FontAwesomeIcons.minus,
+                              onbtn: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            RoundButton(
+                              icon: FontAwesomeIcons.plus,
+                              onbtn: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
                 Expanded(child: ReusableCard(colour: Color(0xFF1D1E33))),
               ],
             ),
