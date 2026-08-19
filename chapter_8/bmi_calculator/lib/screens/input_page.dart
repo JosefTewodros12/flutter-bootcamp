@@ -185,12 +185,15 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Reusablebutton(
-            btnColour: btnColor,
-            btnText: 'Calculate',
-            onPress: () {
-              Navigator.pushNamed(context, '/second');
-            },
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+            child: Reusablebutton(
+              btnColour: btnColor,
+              btnText: 'Calculate',
+              onPress: () {
+                Navigator.pushNamed(context, '/second');
+              },
+            ),
           ),
         ],
       ),

@@ -19,10 +19,9 @@ const numtextstyle = TextStyle(
 
 //RESULT PAGE COLORS AND STYLE
 const labelResultStyle = TextStyle(
-  color: Colors.green,
+  color: Color(0xFF24D876),
   fontSize: 30,
   fontWeight: FontWeight.w800,
-  textBaseline: TextBaseline.alphabetic,
 );
 
 const numResultStyle = TextStyle(
@@ -31,8 +30,4 @@ const numResultStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
-const description = TextStyle(
-  color: Colors.white,
-  fontSize: 25,
-  textBaseline: TextBaseline.alphabetic,
-);
+const description = TextStyle(color: Colors.white, fontSize: 25);

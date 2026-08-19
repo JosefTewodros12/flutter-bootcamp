@@ -22,7 +22,11 @@ class Reusablebutton extends StatelessWidget {
         child: Center(
           child: Text(
             btnText,
-            style: TextStyle(fontSize: 25, letterSpacing: 3),
+            style: TextStyle(
+              fontSize: 27,
+              letterSpacing: 3,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
