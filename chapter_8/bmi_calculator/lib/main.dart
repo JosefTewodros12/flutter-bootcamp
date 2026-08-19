@@ -12,7 +12,6 @@ class BMICalculator extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
-      //home: InputPage(),
       initialRoute: '/',
       routes: {
         '/': (context) => InputPage(),

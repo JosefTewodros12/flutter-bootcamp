@@ -1,6 +1,6 @@
-import 'package:bmi_calculator/constants/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:bmi_calculator/constants/constant.dart';
 
 class IconContent extends StatelessWidget {
   const IconContent({
@@ -17,11 +17,7 @@ class IconContent extends StatelessWidget {
       children: [
         FaIcon(genderIcon, size: 80),
         SizedBox(height: 10),
-        Text(
-          genderText,
-          //style: TextStyle(fontSize: 18, color: Color(0xFF8D8E98)),
-          style: textstyle,
-        ),
+        Text(genderText, style: textstyle),
       ],
     );
   }
