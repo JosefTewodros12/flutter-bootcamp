@@ -23,7 +23,7 @@ class Reusablebutton extends StatelessWidget {
           child: Text(
             btnText,
             style: TextStyle(
-              fontSize: 27,
+              fontSize: 17,
               letterSpacing: 3,
               fontWeight: FontWeight.bold,
             ),
