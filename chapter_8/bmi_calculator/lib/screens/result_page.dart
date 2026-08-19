@@ -62,7 +62,7 @@ class ResultPage extends StatelessWidget {
           ),
           Reusablebutton(
             btnColour: btnColor,
-            btnText: 'RE-CALCULATE',
+            btnText: 'RE-CALCULATE YOUR BMI',
             onPress: () {
               Navigator.pop(context);
             },

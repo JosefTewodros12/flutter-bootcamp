@@ -19,9 +19,9 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender? selectedGender;
-  int height = 180;
-  int weight = 60;
-  int age = 20;
+  int height = 183;
+  int weight = 74;
+  int age = 19;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -191,7 +191,7 @@ class _InputPageState extends State<InputPage> {
             padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
             child: Reusablebutton(
               btnColour: btnColor,
-              btnText: 'Calculate',
+              btnText: 'CALCULATE YOUR BMI',
               onPress: () {
                 CalculateBrain calc = CalculateBrain(
                   height: height,
