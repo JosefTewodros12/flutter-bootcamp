@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:clima/utilities/constants.dart';
 
 class LocationScreen extends StatefulWidget {
+  const LocationScreen({super.key});
+
   @override
-  _LocationScreenState createState() => _LocationScreenState();
+  State<LocationScreen> createState() => _LocationScreenState();
 }
 
 class _LocationScreenState extends State<LocationScreen> {
@@ -16,7 +18,9 @@ class _LocationScreenState extends State<LocationScreen> {
             image: AssetImage('images/location_background.jpg'),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
-                Colors.white.withOpacity(0.8), BlendMode.dstATop),
+              Colors.white.withValues(alpha: 0.8),
+              BlendMode.modulate,
+            ),
           ),
         ),
         constraints: BoxConstraints.expand(),
@@ -28,19 +32,13 @@ class _LocationScreenState extends State<LocationScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  FlatButton(
+                  TextButton(
                     onPressed: () {},
-                    child: Icon(
-                      Icons.near_me,
-                      size: 50.0,
-                    ),
+                    child: Icon(Icons.near_me, size: 50.0),
                   ),
-                  FlatButton(
+                  TextButton(
                     onPressed: () {},
-                    child: Icon(
-                      Icons.location_city,
-                      size: 50.0,
-                    ),
+                    child: Icon(Icons.location_city, size: 50.0),
                   ),
                 ],
               ),
@@ -48,14 +46,8 @@ class _LocationScreenState extends State<LocationScreen> {
                 padding: EdgeInsets.only(left: 15.0),
                 child: Row(
                   children: <Widget>[
-                    Text(
-                      '32°',
-                      style: kTempTextStyle,
-                    ),
-                    Text(
-                      '☀️',
-                      style: kConditionTextStyle,
-                    ),
+                    Text('32°', style: kTempTextStyle),
+                    Text('☀️', style: kConditionTextStyle),
                   ],
                 ),
               ),
