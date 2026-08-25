@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:destini/story_brain.dart';
-
 //todo: Step 15 - Run the app and see if you can see the screen update with the first story. Delete this todo if it looks as you expected.
 
 void main() => runApp(Destini());
